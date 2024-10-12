@@ -1,0 +1,38 @@
+<!--pages/message/message.wxml-->
+<!-- <view class="wrapper">暂无消息</view> -->
+<van-sticky>
+  <van-cell bind:click="dayListClick" value="{{defaultDate}}" title="开始时间">
+    <van-icon slot="right-icon" name="search" class="custom-icon" />
+  </van-cell>
+</van-sticky>
+
+<view style="margin-bottom: 150rpx;">
+  <van-empty wx:if="{{recordList.length<=0}}" description="暂无记录!" />
+
+  <view wx:for="{{recordList}}" wx:for-item="headerItem"  wx:for-index="index" >
+  <van-divider textColor="#FF9DCA"   fontSize="12" contentPosition="center">{{headerItem.headTime}}</van-divider>
+  <van-collapse value="{{ activeNames }}" wx:for="{{headerItem.recordGroups}}" wx:for-item="item"  bind:change="onChange" wx:for-index="itemIndex" >
+      <!-- <van-collapse-item  value="{{headerItem.daySum.qitaCount+'次'}}"  icon="{{headerItem.qitaList[0].icon}}" wx:if="{{headerItem.qitaList.length>0}}" title="其它"  name="其它{{index}}">
+          <text wx:for="{{headerItem.qitaList}}" wx:for-item="item">
+            <text style="margin-left: 15rpx;">{{item.showTime}}</text>
+            <text style="margin-left: 15rpx;margin-right:25rpx;">{{item.memoto}};</text>
+          </text>
+      </van-collapse-item> -->
+      <van-collapse-item icon="{{item.icon}}" title="{{item.name}}"  name="{{item.name}} {{itemIndex}}">
+          <text>
+            <text style="margin-left: 15rpx;">{{item.showTime}}</text>
+            <text style="margin-left: 15rpx;margin-right:25rpx;">{{item.text}}</text>
+          </text>
+      </van-collapse-item>
+    </van-collapse>
+    </view>
+</view>
+<van-popup show="{{ showDayList }}" position="bottom"   custom-style="height: 40%;" >
+      <van-datetime-picker
+        type="date"
+        value="{{ currentDate }}" 
+        max-date="{{currentDate}}"
+        bind:confirm="dayListConfirm"
+        bind:cancel="dayListCancel"
+      />
+</van-popup>

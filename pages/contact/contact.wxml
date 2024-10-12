@@ -1,0 +1,23 @@
+<!--pages/contact/contact.wxml-->
+<view style="text-align: center;margin-top: 50rpx;">我的微信sinx00000</view>
+<!-- <view class="ub-user_title">
+  <image class="ub-avatar" src="{{avatarUrl}}" mode="aspectFill" bindtap="showPopup" />
+  <text class="ub-nickName" bindtap="showPopup">{{nickName}}</text>
+</view>
+
+ 
+<!-- 更新头像和昵称的pop 
+<van-popup show="{{ isShowPop }}" round position="bottom" closeable bind:close="closePopup">
+  <view class="ub-get_user">
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="ub-get_user_image" src="{{_avatarUrl}}" mode="" />
+    </button>
+    <view class="ub-get_user_image_tip">点击更换头像</view>
+    <view class="ub-get_user_nickName_box">
+      <input class="ub-get_user_nickName" type="nickname" placeholder="请输入昵称" model:value="{{_nickName}}" />
+    </view>
+    <view class="ub-button1" bindtap="submitGetUser">
+      确定
+    </view>
+  </view>
+</van-popup> -->

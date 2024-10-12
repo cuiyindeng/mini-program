@@ -1,0 +1,12 @@
+/* pages/message/message.wxss */
+/* .wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 250rpx;
+  font-size: 50rpx;
+  color: #fb0505;
+} */
+
+.van-cell__value{
+  text-align: left !important;
+}
